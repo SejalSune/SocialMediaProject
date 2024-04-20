@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Gloria+Hallelujah&family=Indie+Flower&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Protest+Riot&family=Protest+Strike&family=Roboto+Slab:wght@100..900&display=swap');
+
+.funkyfont {
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Apply styles to the main container */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns items horizontally */
+  height: 100vh; /* Set the height of the container to the full viewport height */
+}
+
+/* Apply styles to the top navigation */
+.topnav {
+  display: flex;
+  width: 480px;
+  justify-content: space-around;
+  padding: 20px 0; /* Add padding for spacing */
+}
+
+/* Apply styles to the secondary navigation */
+.secnav {
+  width: 480px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  padding: 10px 3px 10px 3px;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 0.5px solid gray;
+  margin-bottom: 20px;
+}
+
+.secnav div {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: aqua;
+}
+
+.secnav input {
+  width: 76%;
+}
+
+.cardd {
+  width: 480px;
+}
+
+.photoupload {
+  width: 100%;
+  padding: 5px;
+  border-radius: 9px;
+}
+
+.load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 75px 0px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-top: 3px dashed black;
+  animation: spin 1s linear infinite;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.cardd p a {
+  text-decoration: none;
+  color: blue;
+}
+
+.alert {
+  width: 480px;
+}
+
+.butt-color {
+  background-color: #edf2f4;
+  color: #2b2d42;
+  border: 0.5px solid #2b2d42;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>new posts</title>
+    <!-- css  -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Gloria+Hallelujah&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Protest+Riot&family=Protest+Strike&family=Roboto+Slab:wght@100..900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .create {
+            height: 100vh;
+            width: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 15px;
+        }
+
+        .create div input {
+            width: 460px;
+        }
+
+        textarea {
+            width: 460px !important;
+        }
+
+        .create div {
+            margin: 10px;
+        }
+
+        .create p {
+            font-size: 35px;
+        }
+
+        .create button {
+            font-size: 20px;
+        }
+
+        .funkyfont {
+            font-family: "Gloria Hallelujah", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .back {
+            background-color: white;
+            border: none;
+        }
+
+        .backward {
+            padding: 20px 40px;
+        }
+    </style>
+
+</head>
+<body>
+        <div class="backward">
+            <form method="get" action="/welcome">
+                <button class="back"><i class="fa-solid fa-left-long fa-2xl"></i> Back</button>
+            </form>
+        </div>
+
+        <div>
+            <form method="post" action="/login" class="needs-validation" novalidate>
+            
+                <div class="create">
+                    <p class="funkyfont">Login</p>
+                    <% if(success && success.length) {%>
+                        <div class="alert alert-success" role="alert">
+                            <%= success %>
+                        </div>
+                        <% } %>
+                
+                        <% if(error && error.length) {%>
+                            <div class="alert alert-danger" role="alert">
+                                <%= error %>
+                            </div>
+                        <% } %>
+                    <div>
+                        <input type="text" id="username" class="form-control" placeholder="Username" name="username" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please choose a username.
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <input type="password" id="password" class="form-control" placeholder="password" name="password" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please add password.
+                        </div>
+                    </div>
+    
+                    <button class="btn btn-info funkyfont">login</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="backward">
+            <form method="get" action="/signup">
+                <button class="back"><i class="fa-solid fa-user fa-xl"></i> Signup</button>
+            </form>
+        </div>
+
+    <script>
+                (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+            }, false)
+        })
+        })()
+    </script>
+</body>
+</html>
