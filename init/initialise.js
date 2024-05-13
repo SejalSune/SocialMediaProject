@@ -2,7 +2,6 @@ const mongoose=require("mongoose");
 const posts=require("../models/posts.js");
 const initdata=require("./data.js");
 
-
 main().then(()=>{
     console.log("DB connected");
 }).catch((err)=>{
@@ -12,7 +11,6 @@ main().then(()=>{
 async function main(){
    await mongoose.connect('mongodb://127.0.0.1:27017/socialmedia');
 }
-
 
 const initialise=async ()=>{
     await posts.deleteMany({});

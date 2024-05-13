@@ -9,9 +9,11 @@ const posts=require("./routes/posts.js");  //routes
 const user=require("./routes/user.js");  // user routes
 const methodOverride = require('method-override');
 const session=require("express-session");
+const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const passport=require("passport");
 const LocalStrategy=require("passport-local");
+const atlasURL=process.env.atlas_db;
 
 app.set("view engine", "ejs");
 app.set("views",path.join(__dirname,"/views"));
@@ -20,16 +22,29 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 app.use(flash());
 
+const store=MongoStore.create({ 
+    mongoUrl: atlasURL,
+    touchAfter: 24 * 3600 ,
+    crypto: {
+        secret: process.env.secret
+    }
+});
+
 app.use(session({
-    secret: 'keyboard cat',
+    store,
+    secret: process.env.secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
         expires:Date.now() + 7 * 24 * 60 * 60 * 1000,
         maxAge: 7 * 24 * 60 * 60 * 1000,
         httpOnly:true,
-    }
+    } 
 }));
+
+store.on("error",()=>{
+    console.log("error in session store");
+});
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -59,7 +74,7 @@ main().then(()=>{
 });
 
 async function main(){
-   await mongoose.connect('mongodb://127.0.0.1:27017/socialmedia');
+   await mongoose.connect(atlasURL);
 }
 
 app.use((err,req,res,next)=>{
