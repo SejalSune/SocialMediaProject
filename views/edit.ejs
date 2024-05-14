@@ -34,10 +34,6 @@
             width: 460px;
         }
 
-        textarea {
-            width: 460px !important;
-        }
-
         .create div {
             margin: 10px;
         }
@@ -74,6 +70,33 @@
             color: rgb(170, 15, 15);
         }
 
+        @media (min-width:320px) and (max-width:400px) {
+            .backward {
+                display: none;
+            }
+            .mediachangeH {
+                font-size: 20px !important;
+            }
+            .mediachange {
+                font-size: 15px !important;
+            }
+            .create {
+                width: 340px;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            #location {
+                width: 320px;
+            }
+            #caption {
+                width: 320px;
+            }
+            .create div {
+                margin-left: 4.1rem;
+            }
+
+        }
+
     </style>
 
 </head>
@@ -88,7 +111,7 @@
             <form method="post" action="/posts/<%=uploads._id%>?_method=PUT">
             
                 <div class="create">
-                    <p class="funkyfont">Edit Post <i class="fa-solid fa-pencil"></i></p>
+                    <p class="funkyfont mediachangeH">Edit Post <i class="fa-solid fa-pencil"></i></p>
                     <!-- <div>
                         <label for="username" class="funkyfont form-label"><b>Username 👤</b></label>
                         <input type="text" id="username" class="form-control" name="username" value="<%=uploads.username%>">
@@ -96,7 +119,7 @@
     
                     <div>
                         <label for="caption" class="form-label funkyfont"><b> Caption 💬</b></label>
-                        <textarea name="caption" id="caption" cols="30" rows="5" class="form-control"><%=uploads.caption%></textarea>
+                        <textarea name="caption" id="caption" cols="60" rows="5" class="form-control"><%=uploads.caption%></textarea>
                     </div>
                     
                     <!-- <div>
@@ -108,7 +131,7 @@
                         <input type="text" id="location" class="form-control" name="location" value="<%=uploads.location%>">
                     </div>
     
-                    <button class="btn btn-info funkyfont">Post</button>
+                    <button class="btn btn-info funkyfont mediachange">Post</button>
                 </div>
             </form>
         </div>

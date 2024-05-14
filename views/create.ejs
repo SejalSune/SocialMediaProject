@@ -35,7 +35,7 @@
         }
 
         textarea {
-            width: 460px !important;
+            width: 460px;
         }
 
         .create div {
@@ -64,6 +64,26 @@
         .backward {
             padding: 20px 40px;
         }
+        @media (min-width:320px) and (max-width:400px) {
+            .backward {
+                display: none;
+            }
+            .create {
+                width: 380px;
+            }
+            #photo, #location {
+                width: 300px;
+            }
+            #caption {
+                width: 300px;
+            }
+            .mediachangeH {
+                font-size: 20px !important;
+            }
+            .mediachange {
+                font-size: 15px !important;
+            }
+        }
     </style>
 
 </head>
@@ -78,10 +98,10 @@
             <form method="post" action="/posts" class="needs-validation" novalidate enctype="multipart/form-data">
             
                 <div class="create">
-                    <p class="funkyfont">Create New Post</p>
+                    <p class="funkyfont mediachangeH">Create New Post</p>
     
                     <div>
-                        <textarea name="posts[caption]" id="caption" cols="30" rows="5" placeholder="Caption" class="form-control" required></textarea>
+                        <textarea name="posts[caption]" id="caption" cols="60" rows="5" placeholder="Caption" class="form-control" required></textarea>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -110,7 +130,7 @@
                         </div>
                     </div>
     
-                    <button class="btn btn-info funkyfont">Post</button>
+                    <button class="btn btn-info funkyfont mediachange">Post</button>
                 </div>
             </form>
         </div>

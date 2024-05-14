@@ -66,6 +66,24 @@
         .backward {
             padding: 20px 40px;
         }
+
+        @media (min-width:320px) and (max-width:400px) {
+            .backward {
+                display: none;
+            }
+            .mediachangeH {
+                font-size: 20px !important;
+            }
+            .mediachange {
+                font-size: 15px !important;
+            }
+            .create {
+                width: 340px;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+
     </style>
 
 </head>
@@ -80,7 +98,7 @@
             <form method="post" action="/welcome" class="needs-validation" novalidate>
             
                 <div class="create">
-                    <p class="funkyfont">Welcome to Connectopia!!!</p>
+                    <p class="funkyfont mediachangeH">Welcome to Connectogram!!!</p>
                     <% if(success && success.length) {%>
                         <div class="alert alert-success" role="alert">
                             <%= success %>
@@ -94,11 +112,11 @@
                     <% } %>
                     
                     <% if(! curruser) { %>
-                    <div><a href="/signup" class="btn btn-info btn-lg">Signup</a></div>
-                    <div><a href="/login" class="btn btn-info btn-lg">Login</a></div>
+                    <div><a href="/signup" class="btn btn-info btn-lg mediachange">Signup</a></div>
+                    <div><a href="/login" class="btn btn-info btn-lg mediachange">Login</a></div>
                     <% } %>
                     <% if(curruser) { %>
-                    <div><a href="/logout" class="btn btn-info btn-lg">Logout</a></div>
+                    <div><a href="/logout" class="btn btn-info btn-lg mediachange">Logout</a></div>
                     <% } %>
                 </div>
             </form>

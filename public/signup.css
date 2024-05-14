@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Gloria+Hallelujah&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Protest+Riot&family=Protest+Strike&family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.create {
+    height: 100vh;
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.create div input {
+    width: 460px;
+}
+
+textarea {
+    width: 460px !important;
+}
+
+.create div {
+    margin: 10px;
+}
+
+.create p {
+    font-size: 35px;
+}
+
+.create button {
+    font-size: 20px;
+}
+
+.funkyfont {
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.back {
+    background-color: white;
+    border: none;
+}
+
+.backward {
+    padding: 20px 40px;
+}
+
+@media (min-width:300px) and (max-width:420px) {
+    .backward {
+        display: none;
+    }
+    .create {
+        width: 370px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    #password, #username, #email {
+        width: 337px;
+        padding-right: 20px;
+        padding-left: 35px;
+    }
+    .mediachangeH {
+        font-size: 20px !important;
+    }
+    .mediachange {
+        font-size: 15px !important;
+    }
+}
