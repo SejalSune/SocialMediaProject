@@ -54,17 +54,17 @@ textarea {
     padding: 20px 40px;
 }
 
-@media (min-width:350px) and (max-width:420px) {
+@media (min-width:330px) and (max-width:400px) {
     .backward {
         display: none;
     }
     .create {
-        width: 370px;
+        width: 320px;
         padding-right: 20px;
         padding-left: 20px;
     }
     #password, #username, #email {
-        width: 337px;
+        width: 290px;
         padding-right: 20px;
         padding-left: 35px;
     }

@@ -70,7 +70,11 @@
             color: rgb(170, 15, 15);
         }
 
-        @media (min-width:350px) and (max-width:420px) {
+        .ddelete {
+            visibility: hidden;
+        }
+
+        @media (min-width:330px) and (max-width:400px){
             .backward {
                 display: none;
             }
@@ -81,20 +85,27 @@
                 font-size: 15px !important;
             }
             .create {
-                width: 340px;
-                padding-left: 30px;
-                padding-right: 30px;
+                width: 330px;
+                height: 460px;
             }
             #location {
-                width: 320px;
+                width: 310px;
             }
             #caption {
-                width: 320px;
+                width: 310px;
             }
             .create div {
-                margin-left: 4.1rem;
+                margin-left: 3.1rem;
             }
-
+            .ddelete {
+                visibility: visible;
+            }
+            .editmedia {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
         }
 
     </style>
@@ -107,34 +118,35 @@
             </form>
         </div>
 
-        <div>
-            <form method="post" action="/posts/<%=uploads._id%>?_method=PUT">
-            
-                <div class="create">
-                    <p class="funkyfont mediachangeH">Edit Post <i class="fa-solid fa-pencil"></i></p>
-                    <!-- <div>
-                        <label for="username" class="funkyfont form-label"><b>Username 👤</b></label>
-                        <input type="text" id="username" class="form-control" name="username" value="<%=uploads.username%>">
-                    </div> -->
-    
-                    <div>
-                        <label for="caption" class="form-label funkyfont"><b> Caption 💬</b></label>
-                        <textarea name="caption" id="caption" cols="60" rows="5" class="form-control"><%=uploads.caption%></textarea>
+        <div class="editmedia">
+            <div>
+                <form method="post" action="/posts/<%=uploads._id%>?_method=PUT">
+                
+                    <div class="create">
+                        <p class="funkyfont mediachangeH">Edit Post <i class="fa-solid fa-pencil"></i></p>
+        
+                        <div>
+                            <label for="caption" class="form-label funkyfont"><b> Caption 💬</b></label>
+                            <textarea name="caption" id="caption" cols="60" rows="5" class="form-control"><%=uploads.caption%></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="location" class="form-label funkyfont"><b>location 📍</b></label>
+                            <input type="text" id="location" class="form-control" name="location" value="<%=uploads.location%>">
+                        </div>
+        
+                        <button class="btn btn-info funkyfont mediachange">Post</button>
                     </div>
-                    
-                    <!-- <div>
-                        <img src="<%=uploads.photo.URL%>" alt="" width="400px">
-                    </div> -->
-                    
-                    <div>
-                        <label for="location" class="form-label funkyfont"><b>location 📍</b></label>
-                        <input type="text" id="location" class="form-control" name="location" value="<%=uploads.location%>">
-                    </div>
+                </form>
+            </div>
     
-                    <button class="btn btn-info funkyfont mediachange">Post</button>
-                </div>
-            </form>
+            <div class="ddelete">
+                <form action="/posts/<%=uploads._id%>?_method=Delete" method="post">
+                    <button class="btn btn-info funkyfont mediachange">Delete</button>
+                </form>
+            </div>
         </div>
+        
 
         <div class="backward">
             <form action="/posts/<%=uploads._id%>?_method=Delete" method="post">

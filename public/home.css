@@ -102,18 +102,18 @@
   border: 0.5px solid #2b2d42;
 }
 
-@media (min-width:350px) and (max-width:420px) {
+@media (min-width:330px) and (max-width:400px) {
   .cardd {
-    width: 360px;
+    width: 320px;
   }
   .secnav {
-    width: 360px;
+    width: 320px;
   }
   .topnav {
-    width: 360px;
+    width: 320px;
   }
   .funkyfont {
-    font-size: 11px;
+    font-size: 9px;
   }
   .form-control {
     padding: 2px 6px;
@@ -131,7 +131,11 @@
   .description {
     margin-bottom: 7px;
   }
-  .flashh {
-    width: 320px;
+  .alert {
+    width: 300px !important;
+    padding: 5px !important;
 }
+  body {
+    background-color: aqua;
+  }
 }
