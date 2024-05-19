@@ -104,13 +104,13 @@
 
 @media (max-width: 480px) {
   .cardd {
-    width: 320px;
+    width: 100%;
   }
   .secnav {
-    width: 320px;
+    width: 100%;
   }
   .topnav {
-    width: 320px;
+    width: 100%;
   }
   .funkyfont {
     font-size: 9px;
@@ -134,5 +134,8 @@
   .alert {
     width: 300px !important;
     padding: 5px !important;
-}
+  }
+  .main {
+    padding: 3px 7px;
+  }
 }

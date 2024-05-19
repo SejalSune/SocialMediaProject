@@ -68,9 +68,6 @@
             .backward {
                 display: none;
             }
-            .create {
-                width: 325px;
-            }
             #photo, #location {
                 width: 300px;
             }
@@ -83,6 +80,15 @@
             .mediachange {
                 font-size: 15px !important;
             }
+            .main-create {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .create {
+                width: 100%;
+            }
         }
     </style>
 
@@ -94,7 +100,7 @@
             </form>
         </div>
 
-        <div>
+        <div class="main-create">
             <form method="post" action="/posts" class="needs-validation" novalidate enctype="multipart/form-data">
             
                 <div class="create">

@@ -71,20 +71,29 @@
             .backward {
                 display: none;
             }
+            .main-create {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .create {
+                width: 100%;
+            }
             .mediachangeH {
                 font-size: 20px !important;
             }
             .mediachange {
                 font-size: 15px !important;
             }
-            .create {
-                width: 340px;
-                padding-left: 30px;
-                padding-right: 30px;
-            }
             .alert {
                 width: 300px !important;
                 padding: 5px !important;
+            }
+            .main-create {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
 
@@ -98,9 +107,8 @@
             </form>
         </div>
 
-        <div>
+        <div class="main-create">
             <form method="post" action="/welcome" class="needs-validation" novalidate>
-            
                 <div class="create">
                     <p class="funkyfont mediachangeH">Welcome to Connectogram!!!</p>
                     <% if(success && success.length) {%>
