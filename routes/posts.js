@@ -10,7 +10,7 @@ const {storage}=require("../cloudconfig.js");
 const uploaddd = multer({ storage });
 
 // route 
-router.get("/create",isloggedin,(req,res)=>{
+router.get("/create",(req,res)=>{
     res.render("create.ejs");
 });
 

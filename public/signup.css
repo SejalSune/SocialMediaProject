@@ -54,12 +54,12 @@ textarea {
     padding: 20px 40px;
 }
 
-@media (min-width:330px) and (max-width:400px) {
+@media (max-width: 480px) {
     .backward {
         display: none;
     }
     .create {
-        width: 320px;
+        width: 100% !important;
         padding-right: 20px;
         padding-left: 20px;
     }

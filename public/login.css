@@ -63,7 +63,7 @@ textarea {
 }
 
 
-@media (min-width:330px) and (max-width:400px) {
+@media (max-width: 480px) {
     .back {
         display: none;
     }

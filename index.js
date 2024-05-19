@@ -14,6 +14,7 @@ const flash = require('connect-flash');
 const passport=require("passport");
 const LocalStrategy=require("passport-local");
 const atlasURL=process.env.atlas_db;
+const ExpressError=require("./utils/ExpressError.js");
 
 app.set("view engine", "ejs");
 app.set("views",path.join(__dirname,"/views"));
@@ -52,9 +53,6 @@ passport.use(new LocalStrategy(userSchema.authenticate()));
 passport.serializeUser(userSchema.serializeUser());
 passport.deserializeUser(userSchema.deserializeUser());
 
-// app.all("*", (req,res,next) => {
-//     next (new ExpressError(404, "Page Not Found !!!"));
-// });
 
 app.use((req,res,next)=>{
     res.locals.success = req.flash("success");
