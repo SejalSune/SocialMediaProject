@@ -67,10 +67,15 @@ textarea {
     .back {
         display: none;
     }
+    .main-create {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
     .create {
         width: 100%;
-        padding-left: 13px;
-        padding-right: 10px;
         height: 335px;
     }
     #password, #username {
